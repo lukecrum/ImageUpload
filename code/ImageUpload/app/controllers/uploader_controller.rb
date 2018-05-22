@@ -1,7 +1,8 @@
 class UploaderController < ApplicationController
-  def uploader; end
-  def upload
-    file = params[:file]
+  def uploader
+  end
+  def upload_file
+    file = params["Photo"][:file]
     n = YAML.load_file('/var/www/html/filename.yml')
     name = n['name']
     n['name'] = n['name'] + 1
