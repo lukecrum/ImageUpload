@@ -1,5 +1,7 @@
 <body>
   <%= form_tag '/upload', multipart: true do %>
     <%= file_field "Photo", :file %>
+    <p></p>
+    <%= submit_tag "Submit" %>
   <% end %>
 </body>

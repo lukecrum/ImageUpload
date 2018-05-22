@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  match '/upload' => 'uploader/upload', via: :post
+  get '/upload' => 'uploader#uploader'
+  match '/upload' => 'uploader#upload', via: :post
 end
