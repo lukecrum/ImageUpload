@@ -11,6 +11,7 @@ class UploaderController < ApplicationController
     n['name'] = n['name'] + 1
     File.open('/var/www/html/filename.yml', 'w') { |f| f.write n.to_yaml }
     File.open("/var/www/html/images/#{new_name}", 'w+')
-    File.rename(file.original_filename, "/var/www/html/images/#{new_name}")
+    #File.rename(file.original_filename, "/var/www/html/images/#{new_name}")
+    "sudo mv #{file.original_filename} /var/www/html/images/#{new_name}"
   end
 end
