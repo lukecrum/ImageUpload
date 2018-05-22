@@ -8,6 +8,6 @@ class UploaderController < ApplicationController
     new_name = name.to_s + File.extname(file.original_filename)
     n['name'] = n['name'] + 1
     File.open('/var/www/html/filename.yml', 'w') { |f| f.write n.to_yaml }
-    File.rename file.original_filename "/var/www/html/images/#{new_name}"
+    File.rename(file.original_filename, "/var/www/html/images/#{new_name}")
   end
 end
