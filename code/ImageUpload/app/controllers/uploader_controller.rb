@@ -9,11 +9,9 @@ class UploaderController < ApplicationController
     name = n['name']
     new_name = name.to_s + File.extname(file.original_filename)
     n['name'] = n['name'] + 1
-    sudo  = Sudo::Wrapper.new
-    sudo.start!
-    sudo[File].open('/var/www/html/filename.yml', 'w') { |f| f.write n.to_yaml }
-    sudo[File].open("/var/www/html/images/#{new_name}", 'w+')
-    sudo[File].rename(file.original_filename, "/var/www/html/images/#{new_name}")
+    File.open('/var/www/html/filename.yml', 'w') { |f| f.write n.to_yaml }
+    File.open("/var/www/html/images/#{new_name}", 'w+')
+    File.rename(file.original_filename, "/var/www/html/images/#{new_name}")
     end
   end
 end
