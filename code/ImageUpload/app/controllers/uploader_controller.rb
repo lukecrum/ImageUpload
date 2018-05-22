@@ -1,4 +1,4 @@
-require 'sudo'
+include 'sudo'
 class UploaderController < ApplicationController
   def uploader
   end
